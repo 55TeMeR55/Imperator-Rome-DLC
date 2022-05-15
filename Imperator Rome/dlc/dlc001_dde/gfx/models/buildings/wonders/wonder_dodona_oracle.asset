@@ -1,0 +1,44 @@
+pdxmesh = {
+	name = "wonder_dodona_oracle_mesh"
+	file = "wonder_dodona_oracle.mesh"
+
+	lod_percentages = {
+		lod = { index = 1 percent = 20.0 }
+		lod = { index = 2 percent = 10.0 }
+	}
+
+	meshsettings = {
+		name = "wonder_dodona_oracle_LOD0Shape"
+		index = 0
+		texture_diffuse = "wonder_dodona_oracle_diffuse.dds"
+		texture_normal = "wonder_dodona_oracle_normal.dds"
+		texture_specular = "wonder_dodona_oracle_properties.dds"
+		shader = "standard"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "wonder_dodona_oracle_LOD1Shape"
+		index = 0
+		texture_diffuse = "wonder_dodona_oracle_diffuse.dds"
+		texture_normal = "wonder_dodona_oracle_normal.dds"
+		texture_specular = "wonder_dodona_oracle_properties.dds"
+		shader = "standard"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "wonder_dodona_oracle_LOD2Shape"
+		index = 0
+		texture_diffuse = "wonder_dodona_oracle_diffuse.dds"
+		texture_normal = "wonder_dodona_oracle_normal.dds"
+		texture_specular = "wonder_dodona_oracle_properties.dds"
+		shader = "standard"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+}
+
+entity = {
+	name = "wonder_dodona_oracle_entity"
+	pdxmesh = "wonder_dodona_oracle_mesh"
+}

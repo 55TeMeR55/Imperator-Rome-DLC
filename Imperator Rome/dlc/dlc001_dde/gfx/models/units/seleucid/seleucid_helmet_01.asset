@@ -1,0 +1,44 @@
+pdxmesh = {
+	name = "seleucid_helmet_01_mesh"
+	file = "seleucid_helmet_01.mesh"
+
+	lod_percentages = {
+		lod = { index = 1 percent = 2.2 }
+		lod = { index = 2 percent = 1.5 }
+	}
+
+	meshsettings = {
+		name = "seleucid_helmet_01_LOD0Shape"
+		index = 0
+		texture_diffuse = "seleucid_helmet_diffuse.dds"
+		texture_normal = "seleucid_helmet_normal.dds"
+		texture_specular = "seleucid_helmet_properties.dds"
+		shader = "standard"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "seleucid_helmet_01_LOD1Shape"
+		index = 0
+		texture_diffuse = "seleucid_helmet_diffuse.dds"
+		texture_normal = "seleucid_helmet_normal.dds"
+		texture_specular = "seleucid_helmet_properties.dds"
+		shader = "standard"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "seleucid_helmet_01_LOD2Shape"
+		index = 0
+		texture_diffuse = "seleucid_helmet_diffuse.dds"
+		texture_normal = "seleucid_helmet_normal.dds"
+		texture_specular = "seleucid_helmet_properties.dds"
+		shader = "standard"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+}
+
+entity = {
+	name = "seleucid_helmet_01_entity"
+	pdxmesh = "seleucid_helmet_01_mesh"
+}

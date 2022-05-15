@@ -1,0 +1,9 @@
+name = "The Punic Wars"
+path = "dlc/dlc005_punic_pack"
+steam_id = "1173860"
+pops_id = "imperator_rome_dlc005_punic_pack"
+msgr_id = "9NF1DTDLGBFW"
+affects_checksum = yes
+affects_compatability = yes
+checksum = "5785659be463eb616e2cb0d45ca69c0e"
+category = "expansion"

@@ -1,0 +1,44 @@
+pdxmesh = {
+	name = "thrace_shield_01_mesh"
+	file = "thrace_shield_01.mesh"
+
+	lod_percentages = {
+		lod = { index = 1 percent = 4.1 }
+		lod = { index = 2 percent = 3.0 }
+	}
+
+	meshsettings = {
+		name = "thrace_shield_01_LOD0Shape"
+		index = 0
+		texture_diffuse = "thrace_weapons_01_diffuse.dds"
+		texture_normal = "thrace_weapons_01_normal.dds"
+		texture_specular = "thrace_weapons_01_properties.dds"
+		shader = "standard"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "thrace_shield_01_LOD1Shape"
+		index = 0
+		texture_diffuse = "thrace_weapons_01_diffuse.dds"
+		texture_normal = "thrace_weapons_01_normal.dds"
+		texture_specular = "thrace_weapons_01_properties.dds"
+		shader = "standard"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "thrace_shield_01_LOD2Shape"
+		index = 0
+		texture_diffuse = "thrace_weapons_01_diffuse.dds"
+		texture_normal = "thrace_weapons_01_normal.dds"
+		texture_specular = "thrace_weapons_01_properties.dds"
+		shader = "standard"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+}
+
+entity = {
+	name = "thrace_shield_01_entity"
+	pdxmesh = "thrace_shield_01_mesh"
+}

@@ -1,0 +1,9 @@
+name = "Epirus Flavor Pack"
+path = "dlc/dlc002_preorder"
+steam_id = "978951"
+pops_id = "imperator_rome_dlc002_preorder"
+msgr_id = "9MSWV609C5CW"
+affects_checksum = yes
+affects_compatability = yes
+checksum = "64a706b85ecf1b532480d1a6ad70c045"
+category = "expansion"

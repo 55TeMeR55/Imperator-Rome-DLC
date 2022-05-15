@@ -1,0 +1,74 @@
+pdxmesh = {
+	name = "wonder_rhodes_acropolis_mesh"
+	file = "wonder_rhodes_acropolis.mesh"
+
+	lod_percentages = {
+		lod = { index = 1 percent = 20.0 }
+		lod = { index = 2 percent = 12.5 }
+	}
+
+	meshsettings = {
+		name = "rhodes_acropolis_ground_LOD0Shape"
+		index = 0
+		texture_diffuse = "wonder_acropolis_rock_diffuse.dds"
+		texture_normal = "wonder_acropolis_rock_normal.dds"
+		texture_specular = "wonder_acropolis_rock_properties.dds"
+		shader = "standard_snow"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "rhodes_acropolis_ground_LOD0Shape"
+		index = 1
+		texture_diffuse = "wonder_rhodes_acropolis_diffuse.dds"
+		texture_normal = "wonder_rhodes_acropolis_normal.dds"
+		texture_specular = "wonder_rhodes_acropolis_properties.dds"
+		shader = "standard_snow"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "LOD_1|rhodes_acropolis_ground_LOD1|rhodes_acropolis_ground_LOD1"
+		index = 0
+		texture_diffuse = "wonder_acropolis_rock_diffuse.dds"
+		texture_normal = "wonder_acropolis_rock_normal.dds"
+		texture_specular = "wonder_acropolis_rock_properties.dds"
+		shader = "standard_snow"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "LOD_1|rhodes_acropolis_ground_LOD1|rhodes_acropolis_ground_LOD1"
+		index = 1
+		texture_diffuse = "wonder_rhodes_acropolis_diffuse.dds"
+		texture_normal = "wonder_rhodes_acropolis_normal.dds"
+		texture_specular = "wonder_rhodes_acropolis_properties.dds"
+		shader = "standard_snow"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "LOD_2|rhodes_acropolis_ground_LOD1|rhodes_acropolis_ground_LOD1"
+		index = 0
+		texture_diffuse = "wonder_acropolis_rock_diffuse.dds"
+		texture_normal = "wonder_acropolis_rock_normal.dds"
+		texture_specular = "wonder_acropolis_rock_properties.dds"
+		shader = "standard_snow"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "LOD_2|rhodes_acropolis_ground_LOD1|rhodes_acropolis_ground_LOD1"
+		index = 1
+		texture_diffuse = "wonder_rhodes_acropolis_diffuse.dds"
+		texture_normal = "wonder_rhodes_acropolis_normal.dds"
+		texture_specular = "wonder_rhodes_acropolis_properties.dds"
+		shader = "standard_snow"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+}
+
+entity = {
+	name = "wonder_rhodes_acropolis_entity"
+	pdxmesh = "wonder_rhodes_acropolis_mesh"
+}

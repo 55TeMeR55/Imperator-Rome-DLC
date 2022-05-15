@@ -1,0 +1,18 @@
+﻿pw_track1 = {
+	music = "event:/MUSIC/PunicWars/mx_mood_pw_01"
+	weight = 25
+	mood = yes
+	can_be_interrupted = yes
+}
+pw_track2 = {
+	music = "event:/MUSIC/PunicWars/mx_mood_pw_02"
+	weight = 25
+	mood = yes
+	can_be_interrupted = yes
+}
+pw_track3 = {
+	music = "event:/MUSIC/PunicWars/mx_mood_pw_03"
+	weight = 25
+	mood = yes
+	can_be_interrupted = yes
+}

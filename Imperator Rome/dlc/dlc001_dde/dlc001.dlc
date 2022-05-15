@@ -1,0 +1,9 @@
+name = "Hellenistic World Flavor Pack"
+path = "dlc/dlc001_dde"
+steam_id = "978950"
+pops_id = "imperator_rome_dlc001_dde"
+msgr_id = "9NVLG16Z73C1"
+affects_checksum = yes
+affects_compatability = yes
+checksum = "229a3456a2b23e1096d132e9d0869355"
+category = "expansion"

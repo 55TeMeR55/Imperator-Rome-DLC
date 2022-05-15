@@ -1,0 +1,44 @@
+pdxmesh = {
+	name = "wonder_tomb_of_alexander_mesh"
+	file = "wonder_tomb_of_alexander.mesh"
+
+	lod_percentages = {
+		lod = { index = 1 percent = 22.5 }
+		lod = { index = 2 percent = 17.5 }
+	}
+
+	meshsettings = {
+		name = "alexanders_mausoleum_LOD0Shape"
+		index = 0
+		texture_diffuse = "wonder_alexanders_tomb_diffuse.dds"
+		texture_normal = "wonder_alexanders_tomb_normal.dds"
+		texture_specular = "wonder_alexanders_tomb_properties.dds"
+		shader = "standard_snow"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "alexanders_mausoleum_LOD1Shape"
+		index = 0
+		texture_diffuse = "wonder_alexanders_tomb_diffuse.dds"
+		texture_normal = "wonder_alexanders_tomb_normal.dds"
+		texture_specular = "wonder_alexanders_tomb_properties.dds"
+		shader = "standard_snow"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "alexanders_mausoleum_LOD2Shape"
+		index = 0
+		texture_diffuse = "wonder_alexanders_tomb_diffuse.dds"
+		texture_normal = "wonder_alexanders_tomb_normal.dds"
+		texture_specular = "wonder_alexanders_tomb_properties.dds"
+		shader = "standard_snow"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+}
+
+entity = {
+	name = "wonder_tomb_of_alexander_entity"
+	pdxmesh = "wonder_tomb_of_alexander_mesh"
+}

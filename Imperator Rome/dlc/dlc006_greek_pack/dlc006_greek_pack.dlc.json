@@ -1,0 +1,21 @@
+{
+	"id":
+	{
+		"steam" : "1252870",
+		"paradox": "imperator_rome_dlc006_greek_pack"
+	},
+	"displayName":
+	{
+		"en": "Magna Graecia"
+	},
+	"category":
+	{
+		"en": "Expansion"
+	},
+	"description":
+	{
+		"en": "Place description text there"
+	},
+	"thumbnailPath": "thumbnail.png",
+	"thirdPartyContent": false
+}

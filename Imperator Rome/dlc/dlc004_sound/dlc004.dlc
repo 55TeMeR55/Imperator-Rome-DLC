@@ -1,0 +1,9 @@
+name = "OST"
+path = "dlc/dlc004_sound"
+steam_id = "1016080"
+pops_id = "imperator_rome_dlc004_soundtrack"
+msgr_id = "XXXXX0003"
+affects_checksum = no
+affects_compatability = no
+checksum = "32e725eb1b2468d1a98d6a9a74447ed3"
+category = "extra"

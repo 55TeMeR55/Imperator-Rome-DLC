@@ -1,0 +1,12 @@
+﻿po_track1 = {
+	music = "event:/MUSIC/PreOrder/mx_mood_po_01"
+	weight = 25
+	mood = yes
+	can_be_interrupted = yes
+}
+po_track2 = {
+	music = "event:/MUSIC/PreOrder/mx_mood_po_02"
+	weight = 25
+	mood = yes
+	can_be_interrupted = yes
+}

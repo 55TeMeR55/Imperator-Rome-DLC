@@ -1,0 +1,9 @@
+name = "Magna Graecia"
+path = "dlc/dlc006_greek_pack"
+steam_id = "1252870"
+pops_id = "imperator_rome_dlc006_greek_pack"
+msgr_id = "9MVH16M2JMZ0"
+affects_checksum = yes
+affects_compatability = yes
+checksum = "8b18d32a5e75c7b7715735b2f822b7cd"
+category = "expansion"

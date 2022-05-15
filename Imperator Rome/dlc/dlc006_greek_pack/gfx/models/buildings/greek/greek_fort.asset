@@ -1,0 +1,20 @@
+pdxmesh = {
+	name = "greek_fort_mesh"
+	file = "greek_fort.mesh"
+
+	meshsettings = {
+		name = "greek_fortShape"
+		index = 0
+		texture_diffuse = "greek_fort_diffuse.dds"
+		texture_normal = "greek_fort_normal.dds"
+		texture_specular = "greek_fort_properties.dds"
+		shader = "standard_snow"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+}
+
+entity = {
+	name = "hellenic_fort_entity"
+	pdxmesh = "greek_fort_mesh"
+	version = 1
+}

@@ -1,0 +1,13 @@
+entity = {
+	name = "epirus_drill_post_entity"
+	pdxmesh = "drill_post_mesh"
+
+	default_state = "attack"
+	state = {
+		name = "attack"
+		animation = "attack_animation"
+		animation_speed = 1
+	}
+	
+	attach = { helmet_attach = epirus_helmet_01_entity }
+}

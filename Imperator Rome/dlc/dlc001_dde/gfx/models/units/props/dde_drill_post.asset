@@ -1,0 +1,55 @@
+entity = {
+	name = "macedon_drill_post_entity"
+	pdxmesh = "drill_post_mesh"
+
+	default_state = "attack"
+	state = {
+		name = "attack"
+		animation = "attack_animation"
+		animation_speed = 1
+	}
+	
+	attach = { helmet_attach = macedon_helmet_01_entity }
+}
+
+entity = {
+	name = "phrygia_drill_post_entity"
+	pdxmesh = "drill_post_mesh"
+
+	default_state = "attack"
+	state = {
+		name = "attack"
+		animation = "attack_animation"
+		animation_speed = 1
+	}
+	
+	attach = { helmet_attach = phrygia_helmet_01_entity }
+}
+
+entity = {
+	name = "seleucid_drill_post_entity"
+	pdxmesh = "drill_post_mesh"
+
+	default_state = "attack"
+	state = {
+		name = "attack"
+		animation = "attack_animation"
+		animation_speed = 1
+	}
+	
+	attach = { helmet_attach = seleucid_helmet_01_entity }
+}
+
+entity = {
+	name = "thrace_drill_post_entity"
+	pdxmesh = "drill_post_mesh"
+
+	default_state = "attack"
+	state = {
+		name = "attack"
+		animation = "attack_animation"
+		animation_speed = 1
+	}
+	
+	attach = { helmet_attach = thrace_helmet_01_entity }
+}

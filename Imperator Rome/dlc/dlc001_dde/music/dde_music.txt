@@ -1,0 +1,20 @@
+﻿dde_track1 = {
+	music = "event:/MUSIC/DDE/mx_mood_dde_01"
+	weight = 25
+	mood = yes
+	can_be_interrupted = yes
+}
+
+dde_track2 = {
+	music = "event:/MUSIC/DDE/mx_mood_dde_02"
+	weight = 25
+	mood = yes
+	can_be_interrupted = yes
+}
+
+dde_track3 = {
+	music = "event:/MUSIC/DDE/mx_mood_dde_03"
+	weight = 25
+	mood = yes
+	can_be_interrupted = yes
+}

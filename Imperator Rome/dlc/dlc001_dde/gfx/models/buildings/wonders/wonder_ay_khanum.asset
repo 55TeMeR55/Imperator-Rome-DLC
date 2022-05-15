@@ -1,0 +1,44 @@
+pdxmesh = {
+	name = "wonder_ay_khanum_mesh"
+	file = "wonder_ay_khanum.mesh"
+
+	lod_percentages = {
+		lod = { index = 1 percent = 20.0 }
+		lod = { index = 2 percent = 15.0 }
+	}
+
+	meshsettings = {
+		name = "greaco_bactrian_palace_of_ay_khanum_LOD0Shape"
+		index = 0
+		texture_diffuse = "wonder_ay_khanum_diffuse.dds"
+		texture_normal = "wonder_ay_khanum_normal.dds"
+		texture_specular = "wonder_ay_khanum_properties.dds"
+		shader = "standard"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "greaco_bactrian_palace_of_ay_khanum_LOD1Shape"
+		index = 0
+		texture_diffuse = "wonder_ay_khanum_diffuse.dds"
+		texture_normal = "wonder_ay_khanum_normal.dds"
+		texture_specular = "wonder_ay_khanum_properties.dds"
+		shader = "standard"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "greaco_bactrian_palace_of_ay_khanum_LOD2Shape"
+		index = 0
+		texture_diffuse = "wonder_ay_khanum_diffuse.dds"
+		texture_normal = "wonder_ay_khanum_normal.dds"
+		texture_specular = "wonder_ay_khanum_properties.dds"
+		shader = "standard"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+}
+
+entity = {
+	name = "wonder_ay_khanum_entity"
+	pdxmesh = "wonder_ay_khanum_mesh"
+}

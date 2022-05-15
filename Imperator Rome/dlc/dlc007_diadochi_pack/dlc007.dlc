@@ -1,0 +1,9 @@
+name = "Heirs of Alexander"
+path = "dlc/dlc007_diadochi_pack"
+steam_id = "1437660"
+pops_id = "imperator_rome_dlc007_heirs_of_alexander"
+msgr_id = "9P02PVVWWLF3"
+affects_checksum = yes
+affects_compatability = yes
+checksum = "064d64337f60ced6539b907e7a6abcd6"
+category = "expansion"

@@ -1,0 +1,55 @@
+pdxmesh = {
+	name = "wonder_library_of_alexandria_mesh"
+	file = "wonder_library_of_alexandria.mesh"
+
+	lod_percentages = {
+		lod = { index = 1 percent = 20.0 }
+		lod = { index = 2 percent = 14.0 }
+		lod = { index = 3 percent = 8.0 }
+	}
+
+	meshsettings = {
+		name = "library_of_alexandria_LOD0Shape"
+		index = 0
+		texture_diffuse = "wonder_library_of_alexandria_diffuse.dds"
+		texture_normal = "wonder_library_of_alexandria_normal.dds"
+		texture_specular = "wonder_library_of_alexandria_properties.dds"
+		shader = "standard"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "LOD_1|library_of_alexandria_LOD1|library_of_alexandria_LOD1Shap"
+		index = 0
+		texture_diffuse = "wonder_library_of_alexandria_diffuse.dds"
+		texture_normal = "wonder_library_of_alexandria_normal.dds"
+		texture_specular = "wonder_library_of_alexandria_properties.dds"
+		shader = "standard"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "library_of_alexandria_LOD2Shape"
+		index = 0
+		texture_diffuse = "wonder_library_of_alexandria_diffuse.dds"
+		texture_normal = "wonder_library_of_alexandria_normal.dds"
+		texture_specular = "wonder_library_of_alexandria_properties.dds"
+		shader = "standard"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "LOD_3|library_of_alexandria_LOD1|library_of_alexandria_LOD1Shap"
+		index = 0
+		texture_diffuse = "wonder_library_of_alexandria_diffuse.dds"
+		texture_normal = "wonder_library_of_alexandria_normal.dds"
+		texture_specular = "wonder_library_of_alexandria_properties.dds"
+		shader = "standard"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+}
+
+entity = {
+	name = "wonder_library_of_alexandria_entity"
+	pdxmesh = "wonder_library_of_alexandria_mesh"
+}

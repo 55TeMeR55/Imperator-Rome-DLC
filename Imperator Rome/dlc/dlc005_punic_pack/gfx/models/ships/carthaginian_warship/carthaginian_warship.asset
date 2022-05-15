@@ -1,0 +1,314 @@
+pdxmesh = {
+	name = "carthaginian_warship_mesh"
+	file = "carthaginian_warship.mesh"
+
+	lod_percentages = {
+		lod = { index = 1 percent = 20.0 }
+	}
+
+	animation = { id = "idle" 			type = "carthaginian_warship_idle.anim" }
+	animation = { id = "move_start" 	type = "carthaginian_warship_move_start.anim" }
+	animation = { id = "moving" 		type = "carthaginian_warship_moving.anim" }
+	animation = { id = "port_idle" 		type = "carthaginian_warship_port_idle.anim" }
+	animation = { id = "death" 			type = "carthaginian_warship_death.anim" }
+	animation = { id = "combat" 		type = "carthaginian_warship_combat.anim" }
+
+	meshsettings = {
+		name = "LOD0Shape"
+		index = 0
+		texture_diffuse = "punic_warship_diffuse.dds"
+		texture_normal = "punic_warship_normal.dds"
+		texture_specular = "punic_warship_properties.dds"
+		shader = "standard_usercolor"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "LODShape1"
+		index = 0
+		texture_diffuse = "punic_warship_diffuse.dds"
+		texture_normal = "punic_warship_normal.dds"
+		texture_specular = "punic_warship_properties.dds"
+		shader = "standard_usercolor"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+	
+	scale = 2
+}
+
+pdxmesh = {
+	name = "CAR_warship_mesh"
+	file = "carthaginian_warship.mesh"
+
+	lod_percentages = {
+		lod = { index = 1 percent = 20.0 }
+	}
+
+	animation = { id = "idle" 			type = "carthaginian_warship_idle.anim" }
+	animation = { id = "move_start" 	type = "carthaginian_warship_move_start.anim" }
+	animation = { id = "moving" 		type = "carthaginian_warship_moving.anim" }
+	animation = { id = "port_idle" 		type = "carthaginian_warship_port_idle.anim" }
+	animation = { id = "death" 			type = "carthaginian_warship_death.anim" }
+	animation = { id = "combat" 		type = "carthaginian_warship_combat.anim" }
+
+	meshsettings = {
+		name = "LOD0Shape"
+		index = 0
+		texture_diffuse = "carthaginian_warship_diffuse.dds"
+		texture_normal = "carthaginian_warship_normal.dds"
+		texture_specular = "carthaginian_warship_properties.dds"
+		shader = "standard_usercolor"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "LODShape1"
+		index = 0
+		texture_diffuse = "carthaginian_warship_diffuse.dds"
+		texture_normal = "carthaginian_warship_normal.dds"
+		texture_specular = "carthaginian_warship_properties.dds"
+		shader = "standard_usercolor"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+	
+	scale = 2
+}
+
+entity = {
+	name = "carthaginian_gfx_trireme"
+	pdxmesh = "carthaginian_warship_mesh"
+	version = 1
+	
+	locator = { name = "combat_effect" position = { 0 0 0 } rotation = { -27 0 0 } }
+	
+	default_state = "idle"
+	state = {
+		name = "idle"
+    	animation = "idle"
+		event = { time = 0 node = "ship_main" particle = "units/ship_idle_wave_01_effect" keep_particle = yes trigger_once = no }
+		event = { time = 3 node = "ship_main" particle = "units/ship_idle_wave_01_effect" keep_particle = yes trigger_once = no }
+		start_event = { trigger_once = yes sound = { soundeffect = "event:/SFX/Animations/Ships/Generic/sfx_anim_ship_generic_idle"}}
+    }
+	state = {
+		name = "port_idle"
+    	animation = "port_idle"
+    }
+	state = {
+		name = "move"
+    	animation = "move_start"
+		looping = no
+		chance = {
+			if_current_state = {
+				"idle" = 100
+				"move" = 0
+			}
+		}
+		next_state = "move"
+		event = { time = 0 node = "hull_front_locator" particle = "units/ship_water_front_01_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "hull_back_locator" particle = "units/ship_water_back_01_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "root" particle = "units/ship_wind_01_effect" keep_particle = yes trigger_once = yes }
+		event = { sound = { soundeffect = "event:/SFX/Animations/Ships/Generic/sfx_anim_ship_generic_start"}}
+
+		
+   }
+	state = {
+		name = "move"
+    	animation = "moving"
+		looping = yes
+		chance = {
+			if_current_state = {
+				"idle" = 0
+				"move" = 100
+			}
+		}
+		next_state = "move"
+		event = { time = 0.25 node = "left_oars_locator" particle = "units/ship_water_oars_03_effect" keep_particle = yes trigger_once = no }
+		event = { time = 0.25 node = "right_oars_locator" particle = "units/ship_water_oars_03_effect" keep_particle = yes trigger_once = no }
+		event = { time = 0 node = "hull_front_locator" particle = "units/ship_water_front_01_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "hull_back_locator" particle = "units/ship_water_back_01_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "hull_back_locator" particle = "units/ship_water_oars_back_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "root" particle = "units/ship_wind_01_effect" keep_particle = yes trigger_once = yes }
+		start_event = { sound = { soundeffect = "event:/SFX/Animations/Ships/Generic/sfx_anim_ship_generic_move"}}
+		
+    }
+	state = {
+		name = "death"
+    	animation = "death"
+		looping = no
+		event = { time = 0 node = "hull_front_locator" particle = "units/ship_sinking_front_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "root" particle = "units/ship_sinking_middle_effect" keep_particle = yes trigger_once = no }
+		event = { time = 0 node = "root" particle = "units/ship_sinking_fire_01_effect" keep_particle = yes trigger_once = no }
+		event = { sound = { soundeffect = "event:/SFX/Animations/Ships/Generic/sfx_anim_ship_generic_death"}}
+		
+    }
+	state = {
+		name = "combat"
+    	animation = "combat"
+		looping = yes
+		event = { time = 0 node = "ship_main" particle = "units/ship_idle_wave_01_effect" keep_particle = yes trigger_once = no }
+		event = { time = 3 node = "ship_main" particle = "units/ship_idle_wave_01_effect" keep_particle = yes trigger_once = no }
+		event = { time = 0 node = "combat_effect" particle = "units/naval_combat_arrow_effect" keep_particle = yes trigger_once = yes }
+		start_event = { sound = { soundeffect = "event:/SFX/Animations/Ships/Generic/sfx_anim_ship_vfx_combat_arrows"}}	
+	}
+}
+
+
+##############
+### Clones ### ----------------------------------------------------------------
+##############
+
+#Liburnians:
+entity = {
+	name = "carthaginian_gfx_liburnian"
+	clone = "carthaginian_gfx_trireme"
+	version = 1
+}
+
+
+#Tetreres:
+entity = {
+	name = "carthaginian_gfx_tetrere"
+	clone = "carthaginian_gfx_trireme"
+	version = 1
+}
+
+#Hexeres:
+entity = {
+	name = "carthaginian_gfx_hexere"
+	clone = "carthaginian_gfx_trireme"
+	version = 1
+}
+
+#Octeres:
+entity = {
+	name = "carthaginian_gfx_octere"
+	clone = "carthaginian_gfx_trireme"
+	version = 1
+}
+
+#Mega Polyremes:
+entity = {
+	name = "carthaginian_gfx_mega_galley"
+	clone = "carthaginian_gfx_trireme"
+	version = 1
+}
+
+
+entity = {
+	name = "CAR_trireme"
+	pdxmesh = "CAR_warship_mesh"
+	version = 1
+	
+	locator = { name = "combat_effect" position = { 0 0 0 } rotation = { -27 0 0 } }
+	
+	default_state = "idle"
+	state = {
+		name = "idle"
+    	animation = "idle"
+		event = { time = 0 node = "ship_main" particle = "units/ship_idle_wave_01_effect" keep_particle = yes trigger_once = no }
+		event = { time = 3 node = "ship_main" particle = "units/ship_idle_wave_01_effect" keep_particle = yes trigger_once = no }
+		start_event = { trigger_once = yes sound = { soundeffect = "event:/SFX/Animations/Ships/Generic/sfx_anim_ship_generic_idle"}}
+    }
+	state = {
+		name = "port_idle"
+    	animation = "port_idle"
+    }
+	state = {
+		name = "move"
+    	animation = "move_start"
+		looping = no
+		chance = {
+			if_current_state = {
+				"idle" = 100
+				"move" = 0
+			}
+		}
+		next_state = "move"
+		event = { time = 0 node = "hull_front_locator" particle = "units/ship_water_front_01_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "hull_back_locator" particle = "units/ship_water_back_01_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "root" particle = "units/ship_wind_01_effect" keep_particle = yes trigger_once = yes }
+		event = { sound = { soundeffect = "event:/SFX/Animations/Ships/Generic/sfx_anim_ship_generic_start"}}
+
+		
+   }
+	state = {
+		name = "move"
+    	animation = "moving"
+		looping = yes
+		chance = {
+			if_current_state = {
+				"idle" = 0
+				"move" = 100
+			}
+		}
+		next_state = "move"
+		event = { time = 0.25 node = "left_oars_locator" particle = "units/ship_water_oars_03_effect" keep_particle = yes trigger_once = no }
+		event = { time = 0.25 node = "right_oars_locator" particle = "units/ship_water_oars_03_effect" keep_particle = yes trigger_once = no }
+		event = { time = 0 node = "hull_front_locator" particle = "units/ship_water_front_01_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "hull_back_locator" particle = "units/ship_water_back_01_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "hull_back_locator" particle = "units/ship_water_oars_back_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "root" particle = "units/ship_wind_01_effect" keep_particle = yes trigger_once = yes }
+		start_event = { sound = { soundeffect = "event:/SFX/Animations/Ships/Generic/sfx_anim_ship_generic_move"}}
+		
+    }
+	state = {
+		name = "death"
+    	animation = "death"
+		looping = no
+		event = { time = 0 node = "hull_front_locator" particle = "units/ship_sinking_front_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "root" particle = "units/ship_sinking_middle_effect" keep_particle = yes trigger_once = no }
+		event = { time = 0 node = "root" particle = "units/ship_sinking_fire_01_effect" keep_particle = yes trigger_once = no }
+	#	start_event = { sound = { soundeffect = "event:/SFX/Animations/Ships/Generic/sfx_anim_ship_generic_move"}}
+		
+    }
+	state = {
+		name = "combat"
+    	animation = "combat"
+		looping = yes
+		event = { time = 0 node = "ship_main" particle = "units/ship_idle_wave_01_effect" keep_particle = yes trigger_once = no }
+		event = { time = 3 node = "ship_main" particle = "units/ship_idle_wave_01_effect" keep_particle = yes trigger_once = no }
+		event = { time = 0 node = "combat_effect" particle = "units/naval_combat_arrow_effect" keep_particle = yes trigger_once = yes }
+		start_event = { sound = { soundeffect = "event:/SFX/Animations/Ships/Generic/sfx_anim_ship_vfx_combat_arrows"}}	
+	}
+}
+
+
+##############
+### Clones ### ----------------------------------------------------------------
+##############
+
+#Liburnians:
+entity = {
+	name = "CAR_liburnian"
+	clone = "CAR_trireme"
+	version = 1
+}
+
+
+#Tetreres:
+entity = {
+	name = "CAR_tetrere"
+	clone = "CAR_trireme"
+	version = 1
+}
+
+#Hexeres:
+entity = {
+	name = "CAR_hexere"
+	clone = "CAR_trireme"
+	version = 1
+}
+
+#Octeres:
+entity = {
+	name = "CAR_octere"
+	clone = "CAR_trireme"
+	version = 1
+}
+
+#Mega Polyremes:
+entity = {
+	name = "CAR_mega_galley"
+	clone = "CAR_trireme"
+	version = 1
+}

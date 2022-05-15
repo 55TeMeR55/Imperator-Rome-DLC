@@ -1,0 +1,153 @@
+pdxmesh = {
+	name = "KNO_warship_mesh"
+	file = "KNO_warship.mesh"
+
+	animation = { id = "idle" 			type = "KNO_warship_idle.anim" }
+	animation = { id = "move_start" 	type = "KNO_warship_move_start.anim" }
+	animation = { id = "moving" 		type = "KNO_warship_moving.anim" }
+	animation = { id = "port_idle" 		type = "KNO_warship_port_idle.anim" }
+	animation = { id = "death" 			type = "KNO_warship_death.anim" }
+	animation = { id = "combat" 		type = "KNO_warship_combat.anim" }
+
+	lod_percentages = {
+		lod = { index = 1 percent = 20.0 }
+	}
+
+	meshsettings = {
+		name = "crete_warship_LOD_0|polySurface1|polySurfaceShape1"
+		index = 0
+		texture_diffuse = "cretan_warship_diffuse.dds"
+		texture_normal = "cretan_warship_normal.dds"
+		texture_specular = "cretan_warship_properties.dds"
+		shader = "standard_usercolor"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+	meshsettings = {
+		name = "crete_warship_LOD_1|polySurface1|polySurfaceShape1"
+		index = 0
+		texture_diffuse = "cretan_warship_diffuse.dds"
+		texture_normal = "cretan_warship_normal.dds"
+		texture_specular = "cretan_warship_properties.dds"
+		shader = "standard_usercolor"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+	
+	#scale = 0.3
+	scale = 2.0
+}
+
+entity = {
+	name = "cretan_trireme"
+	pdxmesh = "KNO_warship_mesh"
+	
+	locator = { name = "combat_effect" position = { 0 0 0 } rotation = { -27 0 0 } }
+	
+	default_state = "idle"
+	state = {
+		name = "idle"
+    	animation = "idle"
+		event = { time = 0 node = "ship_main" particle = "units/ship_idle_wave_01_effect" keep_particle = yes trigger_once = no }
+		event = { time = 3 node = "ship_main" particle = "units/ship_idle_wave_01_effect" keep_particle = yes trigger_once = no }
+		start_event = { trigger_once = yes sound = { soundeffect = "event:/SFX/Animations/Ships/Generic/sfx_anim_ship_generic_idle"}}
+    }
+	state = {
+		name = "port_idle"
+    	animation = "port_idle"
+    }
+	state = {
+		name = "move"
+    	animation = "move_start"
+		looping = no
+		chance = {
+			if_current_state = {
+				"idle" = 100
+				"move" = 0
+			}
+		}
+		next_state = "move"
+		event = { time = 0 node = "hull_front_locator" particle = "units/ship_water_front_01_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "hull_back_locator" particle = "units/ship_water_back_01_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "root" particle = "units/ship_wind_01_effect" keep_particle = yes trigger_once = yes }
+		event = { sound = { soundeffect = "event:/SFX/Animations/Ships/Generic/sfx_anim_ship_generic_start"}}
+
+		
+   }
+	state = {
+		name = "move"
+    	animation = "moving"
+		looping = yes
+		chance = {
+			if_current_state = {
+				"idle" = 0
+				"move" = 100
+			}
+		}
+		next_state = "move"
+		event = { time = 0.25 node = "left_oars_locator" particle = "units/ship_water_oars_03_effect" keep_particle = yes trigger_once = no }
+		event = { time = 0.25 node = "right_oars_locator" particle = "units/ship_water_oars_03_effect" keep_particle = yes trigger_once = no }
+		event = { time = 0 node = "hull_front_locator" particle = "units/ship_water_front_01_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "hull_back_locator" particle = "units/ship_water_back_01_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "hull_back_locator" particle = "units/ship_water_oars_back_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "root" particle = "units/ship_wind_01_effect" keep_particle = yes trigger_once = yes }
+		start_event = { sound = { soundeffect = "event:/SFX/Animations/Ships/Generic/sfx_anim_ship_generic_move"}}
+		
+    }
+	state = {
+		name = "death"
+    	animation = "death"
+		looping = no
+		event = { time = 0 node = "hull_front_locator" particle = "units/ship_sinking_front_effect" keep_particle = yes trigger_once = yes }
+		event = { time = 0 node = "root" particle = "units/ship_sinking_middle_effect" keep_particle = yes trigger_once = no }
+		event = { time = 0 node = "root" particle = "units/ship_sinking_fire_01_effect" keep_particle = yes trigger_once = no }
+		event = { sound = { soundeffect = "event:/SFX/Animations/Ships/Generic/sfx_anim_ship_generic_death"}}
+		
+    }
+	state = {
+		name = "combat"
+    	animation = "combat"
+		looping = yes
+		event = { time = 0 node = "ship_main" particle = "units/ship_idle_wave_01_effect" keep_particle = yes trigger_once = no }
+		event = { time = 3 node = "ship_main" particle = "units/ship_idle_wave_01_effect" keep_particle = yes trigger_once = no }
+		event = { time = 0 node = "combat_effect" particle = "units/naval_combat_arrow_effect" keep_particle = yes trigger_once = yes }
+		start_event = { sound = { soundeffect = "event:/SFX/Animations/Ships/Generic/sfx_anim_ship_vfx_combat_arrows"}}	
+	}
+	
+	#scale = 0.15
+	scale = 1
+}
+
+
+##############
+### Clones ### ----------------------------------------------------------------
+##############
+
+#Liburnians:
+entity = {
+	name = "cretan_liburnian"
+	clone = "cretan_trireme"
+}
+
+#Tetreres:
+entity = {
+	name = "cretan_tetrere"
+	clone = "cretan_trireme"
+}
+
+#Hexeres:
+entity = {
+	name = "cretan_hexere"
+	clone = "cretan_trireme"
+}
+
+#Octeres:
+entity = {
+	name = "cretan_octere"
+	clone = "cretan_trireme"
+}
+
+#Mega Polyremes:
+entity = {
+	name = "cretan_mega_galley"
+	clone = "cretan_trireme"
+}
